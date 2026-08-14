@@ -21,59 +21,31 @@ if ('IntersectionObserver' in window) {
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
-const track = document.querySelector('.carousel-track');
-if (track) {
-  const cards = Array.from(track.querySelectorAll('.review-card'));
-  const dotsWrap = document.querySelector('.carousel-dots');
-  const prevBtn = document.querySelector('.carousel-btn.prev');
-  const nextBtn = document.querySelector('.carousel-btn.next');
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const scrollBehavior = reduceMotion ? 'auto' : 'smooth';
-
-  const dots = cards.map((_, i) => {
-    const dot = document.createElement('button');
-    dot.type = 'button';
-    dot.className = 'dot';
-    dot.role = 'tab';
-    dot.setAttribute('aria-label', `Ga naar review ${i + 1}`);
-    dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
-    dot.addEventListener('click', () => {
-      cards[i].scrollIntoView({ behavior: scrollBehavior, inline: 'start', block: 'nearest' });
-    });
-    dotsWrap.appendChild(dot);
-    return dot;
+// mobile menu
+const menuToggle = document.querySelector('[data-menu-toggle]');
+const mobileNav = document.querySelector('[data-mobile-nav]');
+if (menuToggle && mobileNav) {
+  const closeMenu = () => {
+    mobileNav.classList.remove('is-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.innerHTML = '<svg class="icon" width="20" height="20" aria-hidden="true"><use href="#icon-menu"></use></svg>';
+  };
+  const openMenu = () => {
+    mobileNav.classList.add('is-open');
+    menuToggle.setAttribute('aria-expanded', 'true');
+    menuToggle.innerHTML = '<svg class="icon" width="20" height="20" aria-hidden="true"><use href="#icon-close"></use></svg>';
+  };
+  menuToggle.addEventListener('click', () => {
+    mobileNav.classList.contains('is-open') ? closeMenu() : openMenu();
   });
-
-  const setActive = (index) => {
-    dots.forEach((dot, i) => dot.setAttribute('aria-selected', i === index ? 'true' : 'false'));
-  };
-
-  const closestCardIndex = () => {
-    let closest = 0;
-    let closestDist = Infinity;
-    cards.forEach((card, i) => {
-      const dist = Math.abs(card.offsetLeft - track.scrollLeft);
-      if (dist < closestDist) { closestDist = dist; closest = i; }
-    });
-    return closest;
-  };
-
-  let scrollTimer;
-  track.addEventListener('scroll', () => {
-    clearTimeout(scrollTimer);
-    scrollTimer = setTimeout(() => setActive(closestCardIndex()), 100);
-  }, { passive: true });
-
-  const goTo = (index) => {
-    const clamped = Math.max(0, Math.min(cards.length - 1, index));
-    cards[clamped].scrollIntoView({ behavior: scrollBehavior, inline: 'start', block: 'nearest' });
-  };
-
-  prevBtn?.addEventListener('click', () => goTo(closestCardIndex() - 1));
-  nextBtn?.addEventListener('click', () => goTo(closestCardIndex() + 1));
-
-  track.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowRight') { event.preventDefault(); goTo(closestCardIndex() + 1); }
-    if (event.key === 'ArrowLeft') { event.preventDefault(); goTo(closestCardIndex() - 1); }
-  });
+  mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 }
+
+const reviewItems = document.querySelectorAll('.review-item');
+reviewItems.forEach(item => {
+  item.addEventListener('toggle', () => {
+    if (item.open) {
+      reviewItems.forEach(other => { if (other !== item) other.open = false; });
+    }
+  });
+});
