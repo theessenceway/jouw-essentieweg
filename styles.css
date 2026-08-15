@@ -228,9 +228,10 @@ a:focus-visible,button:focus-visible,.button:focus-visible{outline:2px solid var
   .hero-copy{width:100%;text-align:center;padding:2.5rem 1.4rem 4.5rem}
   .hero-copy h1{font-size:clamp(2.5rem,11vw,3.2rem)}
   .hero-p{font-size:1.05rem;margin:1.1rem auto 0;max-width:none}
-  .hero-meta-chips{flex-wrap:wrap;justify-content:center;gap:.5rem}
-  .hero-meta-chips li{padding:.45rem .7rem;gap:.4rem;font-size:.6rem;letter-spacing:.02em}
-  .hero-meta-chips li svg{width:13px;height:13px}
+  .hero-meta-chips{flex-wrap:nowrap;justify-content:center;gap:.3rem;width:100%;overflow-x:auto;padding-bottom:.2rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .hero-meta-chips::-webkit-scrollbar{display:none}
+  .hero-meta-chips li{flex:0 0 auto;padding:.4rem .55rem;gap:.3rem;font-size:.54rem;letter-spacing:0;white-space:nowrap}
+  .hero-meta-chips li svg{width:12px;height:12px}
   .hero-actions{flex-direction:column;align-items:stretch;gap:1.1rem}
   .hero-actions .button{width:100%}
   .tom-portrait{height:52vh}
