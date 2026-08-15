@@ -35,10 +35,23 @@ if (menuToggle && mobileNav) {
     menuToggle.setAttribute('aria-expanded', 'true');
     menuToggle.innerHTML = '<svg class="icon" width="20" height="20" aria-hidden="true"><use href="#icon-close"></use></svg>';
   };
-  menuToggle.addEventListener('click', () => {
+  menuToggle.addEventListener('click', event => {
+    event.stopPropagation();
     mobileNav.classList.contains('is-open') ? closeMenu() : openMenu();
   });
   mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('click', event => {
+    if (mobileNav.classList.contains('is-open') && !mobileNav.contains(event.target)) closeMenu();
+  });
+}
+
+const navDropdown = document.querySelector('.nav-dropdown');
+if (navDropdown) {
+  navDropdown.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { navDropdown.open = false; }));
+  navDropdown.querySelector('[data-nav-dropdown-close]')?.addEventListener('click', () => { navDropdown.open = false; });
+  document.addEventListener('click', event => {
+    if (navDropdown.open && !navDropdown.contains(event.target)) navDropdown.open = false;
+  });
 }
 
 const reviewItems = document.querySelectorAll('.review-item');

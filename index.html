@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=48">
   <script defer src="script.js"></script>
 </head>
 <body>
@@ -34,6 +34,7 @@
     <symbol id="icon-hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12V6a1.3 1.3 0 0 1 2.6 0v5M10.6 10.6V4.7a1.3 1.3 0 0 1 2.6 0V11M13.2 11V6a1.3 1.3 0 0 1 2.6 0v6M15.8 9v3.2a1.3 1.3 0 0 1 2.6 0V15c0 4-2.6 7-7 7s-6.5-2.3-7.5-5.2L2.7 13a1.4 1.4 0 0 1 2.5-1.3"/></symbol>
     <symbol id="icon-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4C10 4 4 10 4 18c8 0 14-6 16-14z"/><path d="M4.5 18C8 14 12 11 18 8"/></symbol>
     <symbol id="icon-infinity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9a3 3 0 1 0 0 6c2 0 3.2-1.6 5-4s3-4 5-4a3 3 0 1 1 0 6c-2 0-3.2-1.6-5-4s-3-4-5-4z"/></symbol>
+    <symbol id="icon-bird" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15c3-5 6-5 9-1 3-4 6-4 9 1"/></symbol>
   </svg>
 
   <header class="site-header" data-header>
@@ -42,10 +43,19 @@
       <span><strong>Jouw <span class="title-accent">Essentieweg</span></strong></span>
     </a>
     <nav aria-label="Hoofdnavigatie">
-      <a href="#ervaren">Ervaren</a>
-      <a href="#tom">Tom</a>
-      <a href="#verwachten">Verwachten</a>
-      <a href="#tarief">Tarief</a>
+      <details class="nav-dropdown">
+        <summary>Secties</summary>
+        <div class="nav-dropdown-menu">
+          <button type="button" class="nav-dropdown-close" data-nav-dropdown-close aria-label="Menu sluiten"><svg class="icon" width="13" height="13" aria-hidden="true"><use href="#icon-close"></use></svg></button>
+          <a href="#ervaren">Ervaringen</a>
+          <a href="#tom">Tom</a>
+          <a href="#verwachten">Verwachten</a>
+          <a href="#lichaamswerk">Lichaamswerk</a>
+          <a href="#reviews">Testimonies</a>
+          <a href="#tarief">Investering</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </details>
     </nav>
     <a class="button button-small" href="https://wa.me/32474373277?text=Hoi%20Tom%2C%20Jouw%20Essentieweg%20spreekt%20me%20aan%20en%20ik%20ben%20benieuwd%20wat%20deze%20ervaring%20voor%20mij%20kan%20betekenen.%20Kunnen%20we%20even%20kennismaken%3F" target="_blank" rel="noopener">Stuur me een berichtje</a>
     <button class="menu-toggle" type="button" data-menu-toggle aria-label="Menu openen" aria-expanded="false" aria-controls="mobile-nav">
@@ -55,23 +65,26 @@
 
   <div class="mobile-nav" id="mobile-nav" data-mobile-nav>
     <nav aria-label="Mobiele navigatie">
-      <a href="#ervaren">Ervaren</a>
+      <a href="#ervaren">Ervaringen</a>
       <a href="#tom">Tom</a>
       <a href="#verwachten">Verwachten</a>
-      <a href="#tarief">Tarief</a>
+      <a href="#lichaamswerk">Lichaamswerk</a>
+      <a href="#reviews">Testimonies</a>
+      <a href="#tarief">Investering</a>
+      <a href="#contact">Contact</a>
     </nav>
     <a class="button" href="https://wa.me/32474373277?text=Hoi%20Tom%2C%20Jouw%20Essentieweg%20spreekt%20me%20aan%20en%20ik%20ben%20benieuwd%20wat%20deze%20ervaring%20voor%20mij%20kan%20betekenen.%20Kunnen%20we%20even%20kennismaken%3F" target="_blank" rel="noopener">Stuur me een berichtje</a>
   </div>
 
   <main id="main">
 
-    <section class="hero image-section" id="top">
-      <div class="image-overlay"></div>
+    <section class="hero" id="top">
+      <div class="hero-image" aria-hidden="true"></div>
       <div class="hero-copy reveal">
         <p class="eyebrow">Persoonlijk lichaamswerk · bij jou thuis of in Tielen</p>
         <h1>Jouw <span class="title-accent">Essentieweg</span></h1>
         <p class="lead-subtitle">Een reis via het lichaam naar jouw essentie.</p>
-        <p class="hero-p">Tijdens de sessie reis je af naar jouw essentie. Je zakt uit je hoofd en komt thuis in je lichaam. Hierdoor maak je verbinding met wie je werkelijk bent, zonder dat je hiervoor iets hoeft te doen of bereiken.</p>
+        <p class="hero-p">Je zakt uit je hoofd en komt thuis in je lichaam. Hierdoor maak je verbinding met wie je werkelijk bent, zonder dat je hiervoor iets hoeft te doen of bereiken.</p>
         <ul class="hero-meta-chips">
           <li><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#icon-clock"></use></svg><span>± 3 uur</span></li>
           <li><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#icon-pin"></use></svg><span>Bij jou thuis of in Tielen</span></li>
@@ -81,8 +94,6 @@
           <a class="button" href="#ervaren">Ontdek de ervaring</a>
         </div>
       </div>
-      <div class="hero-frame" aria-hidden="true"></div>
-      <a class="scroll-cue" href="#ervaren" aria-label="Scroll naar beneden"><span></span>Verder</a>
     </section>
 
     <section class="ervaren section" id="ervaren">
@@ -92,7 +103,7 @@
         <span class="ervaren-divider" aria-hidden="true"></span>
 
         <div class="ervaren-intro">
-          <p>Deze reis ga je door op de massagetafel, waar ik jaren van ervaring in verschillende modaliteiten samenbreng tot één geheel. Van daaruit kan datgene wat jou verstoort wegstromen en ontstaat er ruimte voor wat zich wil openen.</p>
+          <p>Deze reis ga je door op de massagetafel, waar ik jaren van ervaring in verschillende modaliteiten samenbreng tot één geheel. Van daaruit kan datgene wat jou verstoort wegstromen en ontstaat er een opening waardoor heel wat moois tot bij jou komt.</p>
           <p>Iedere sessie beweegt anders, maar mensen beschrijven vaak dat er iets fundamenteels verschuift in hoe ze zichzelf voelen.</p>
         </div>
 
@@ -117,12 +128,16 @@
             <span class="ervaren-icon"><svg class="icon" width="26" height="26" aria-hidden="true"><use href="#icon-heart"></use></svg></span>
             <div>
               <h3>Emotionele ruimte en bevrijding</h3>
-              <p>Er kunnen ook emoties, herinneringen of ervaringen voelbaar worden die lange tijd onder de oppervlakte aanwezig zijn geweest. Wanneer daar ruimte voor ontstaat, kan spanning die het lichaam heeft vastgehouden beginnen weg te smelten. Wat vastzat krijgt opnieuw beweging en wat zwaar voelde krijgt ruimte. Hierdoor ontstaat meer vrijheid om aanwezig te zijn met wat zich vandaag werkelijk aandient.</p>
+              <p>Er kunnen ook emoties, herinneringen of ervaringen voelbaar worden die lange tijd onder de oppervlakte aanwezig zijn geweest. Wanneer daar ruimte voor ontstaat, kunnen de spanningen die het lichaam heeft vastgehouden wegsmelten. Wat vastzat krijgt opnieuw beweging en wat zwaar voelde krijgt ruimte. Hierdoor ontstaat meer vrijheid om aanwezig te zijn met wat zich vandaag werkelijk aandient.</p>
             </div>
           </article>
         </div>
 
         <svg class="icon ervaren-close-icon" width="28" height="18" aria-hidden="true"><use href="#icon-wave"></use></svg>
+
+        <div class="hero-pause">
+          <p class="hero-pause-whisper"><span class="hero-pause-whisper-lead">Soms heb je niet nog meer advies nodig, niet nog een taak of weer iets dat je moet aanpakken.</span><br>Soms heb je een plek nodig waar jij even niets hoeft vast te houden.</p>
+        </div>
       </div>
     </section>
 
@@ -134,23 +149,44 @@
         <p>De voorbije vijf jaar heb ik me diep verdiept in verschillende vormen van lichaamswerk, massage, bewuste ademhaling, yoga, somatisch en energetisch werk.</p>
         <p>Doorheen de jaren heb ik meer dan €22.000 geïnvesteerd in opleidingen, trainingen en mijn eigen ontwikkeling. Vanuit een diepe passie en drive heb ik gereisd door de verschillende lagen van het mens-zijn en breng ik dit vandaag samen tot één geheel.</p>
         <p>Dat is wat ik met Jouw Essentieweg breng: een diepgaande ervaring die tegelijk heel toegankelijk blijft, waarin jij je volledig kunt laten meenemen.</p>
-        <p>Het is voor mij een echte passie om jou dichter bij je eigenheid te brengen, zodat je vanuit helderheid en daadkracht kunt voortbewegen en met diepe voldoening in het leven kunt staan.</p>
+        <p>Het is voor mij een echte passie om jou dichter bij je eigenheid te brengen, zodat je vanuit helderheid en daadkracht kunt voortbewegen en met diepe voldoening in het leven staan.</p>
+
+        <div class="hero-pause hero-pause-light">
+          <span class="hero-pause-ornament" aria-hidden="true"><span class="hero-pause-ornament-line"></span><span class="hero-pause-ornament-dot"></span><span class="hero-pause-ornament-line"></span></span>
+          <p class="hero-pause-lead">Drie uur lang hoef jij <span class="title-accent">niets te dragen</span>.</p>
+          <p class="hero-pause-body">Je hoeft niets te begrijpen.<br>Je hoeft niets te bereiken.<br>Je mag ontvangen.</p>
+        </div>
       </div>
     </section>
 
     <section class="expect section" id="verwachten">
-      <div class="section-heading reveal">
+      <div class="section-heading centered reveal">
         <p class="eyebrow">Praktisch verloop</p>
         <h2>Wat kan je <span class="title-accent">verwachten?</span></h2>
         <span class="ervaren-divider" aria-hidden="true"></span>
       </div>
       <ol class="expect-flow">
         <li class="reveal"><span class="expect-icon"><svg class="icon" width="26" height="26" aria-hidden="true"><use href="#icon-calendar"></use></svg></span><div><span class="expect-num">01</span><p>Wanneer het je eerste sessie is, plannen we vooraf een korte online videocall. We maken persoonlijk kennis, stemmen af op wat er bij jou aanwezig is en nemen ruimte voor eventuele vragen.</p></div></li>
-        <li class="reveal"><span class="expect-icon"><svg class="icon" width="26" height="26" aria-hidden="true"><use href="#icon-hand"></use></svg></span><div><span class="expect-num">02</span><p>Voor de ervaring voorzie je ongeveer <strong class="price-mark">drie uur</strong>, waarvan ongeveer twee uur bestaat uit lichaamswerk op de massagetafel. Je kunt ervoor kiezen om de sessie in de rust van je eigen huis te ontvangen, of naar Tielen te komen en de ervaring hier los van je dagelijkse omgeving te beleven.</p></div></li>
+        <li class="reveal"><span class="expect-icon"><svg class="icon" width="26" height="26" aria-hidden="true"><use href="#icon-hand"></use></svg></span><div><span class="expect-num">02</span><p>Voor de ervaring voorzie je ongeveer <strong class="price-mark">drie uur</strong>, waarvan ongeveer twee uur bestaat uit lichaamswerk op de massagetafel.</p></div></li>
         <li class="reveal"><span class="expect-icon"><svg class="icon" width="26" height="26" aria-hidden="true"><use href="#icon-heart"></use></svg></span><div><span class="expect-num">03</span><p>Wanneer ik bij jou thuis kom, breng ik de massagetafel, oliën en alle materialen zelf mee. In Tielen zorg ik voor een rustige, warme setting waarin alles voor je klaarstaat.</p></div></li>
         <li class="reveal"><span class="expect-icon"><svg class="icon" width="26" height="26" aria-hidden="true"><use href="#icon-leaf"></use></svg></span><div><span class="expect-num">04</span><p>We beginnen met een korte afstemming en bewuste ademhaling om dieper in je lichaam te zakken. Van daaruit begint het lichaamswerk, volledig afgestemd op jou.</p></div></li>
         <li class="reveal"><span class="expect-icon"><svg class="icon" width="26" height="26" aria-hidden="true"><use href="#icon-infinity"></use></svg></span><div><span class="expect-num">05</span><p>Na het lichaamswerk nemen we opnieuw de tijd om te landen, te voelen wat er in beweging is gekomen en te reflecteren op wat helder is geworden.</p></div></li>
       </ol>
+
+      <div class="expect-choice reveal">
+        <p class="expect-choice-heading">Kies waar jij wilt ontvangen</p>
+        <div class="expect-choice-grid">
+          <div class="expect-choice-option">
+            <p class="expect-choice-title">Bij jou thuis</p>
+            <p>Geen verkeer, geen wachtkamer en na de sessie hoef je nergens meer naartoe. Ik breng de massagetafel, zachte lakens, oliën, muziek en alles wat nodig is mee. Wanneer de sessie eindigt, kun je rusten, douchen, slapen of eenvoudig blijven voelen wat er in beweging is gekomen. Je bent al thuis.</p>
+          </div>
+          <div class="expect-choice-divider" aria-hidden="true"></div>
+          <div class="expect-choice-option">
+            <p class="expect-choice-title">In Tielen</p>
+            <p>Je komt naar een rustige, warme setting waar alles voor je klaarstaat. Even weg uit je dagelijkse omgeving, zodat je volledig ruimte kunt maken voor de ervaring en nadien rustig kunt landen voordat je weer verdergaat.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <div class="lichaamswerk-reviews-bg">
@@ -164,13 +200,13 @@
 
     <section class="reviews section" id="reviews">
       <div class="section-heading centered reveal">
-        <p class="eyebrow">Reviews</p>
-        <h2>Ervaringen van wie <span class="title-accent">je voorgingen</span></h2>
+        <p class="eyebrow">Testimonies</p>
+        <h2>Wat anderen hebben <span class="title-accent">ervaren</span></h2>
       </div>
 
       <div class="review-list reveal">
 
-        <details class="review-item" open style="--review-photo:url('assets/review-daan.jpg')">
+        <details class="review-item" open style="--review-photo:url('assets/review-daan.jpg');--review-photo-pos:50% 20%">
           <summary>
             <span class="review-summary-name">Daan Raeymaekers</span>
             <span class="review-stars" aria-hidden="true"><svg class="icon" width="12" height="12"><use href="#icon-star"></use></svg><svg class="icon" width="12" height="12"><use href="#icon-star"></use></svg><svg class="icon" width="12" height="12"><use href="#icon-star"></use></svg><svg class="icon" width="12" height="12"><use href="#icon-star"></use></svg><svg class="icon" width="12" height="12"><use href="#icon-star"></use></svg></span>
@@ -190,7 +226,7 @@
           </div>
         </details>
 
-        <details class="review-item" style="--review-photo:url('assets/review-rebecca.jpg')">
+        <details class="review-item" style="--review-photo:url('assets/review-rebecca.jpg');--review-photo-pos:58% 28%">
           <summary>
             <span class="review-summary-name">Rebecca</span>
             <span class="review-stars" aria-hidden="true"><svg class="icon" width="12" height="12"><use href="#icon-star"></use></svg><svg class="icon" width="12" height="12"><use href="#icon-star"></use></svg><svg class="icon" width="12" height="12"><use href="#icon-star"></use></svg><svg class="icon" width="12" height="12"><use href="#icon-star"></use></svg><svg class="icon" width="12" height="12"><use href="#icon-star"></use></svg></span>
@@ -209,7 +245,7 @@
           </div>
         </details>
 
-        <details class="review-item" style="--review-photo:url('assets/review-sergio.jpg')">
+        <details class="review-item" style="--review-photo:url('assets/review-sergio.jpg');--review-photo-pos:55% 12%">
           <summary>
             <span class="review-summary-name">Sergio</span>
             <span class="review-stars" aria-hidden="true"><svg class="icon" width="12" height="12"><use href="#icon-star"></use></svg><svg class="icon" width="12" height="12"><use href="#icon-star"></use></svg><svg class="icon" width="12" height="12"><use href="#icon-star"></use></svg><svg class="icon" width="12" height="12"><use href="#icon-star"></use></svg><svg class="icon" width="12" height="12"><use href="#icon-star"></use></svg></span>
@@ -228,7 +264,7 @@
           </div>
         </details>
 
-        <details class="review-item" style="--review-photo:url('assets/review-geert.jpg')">
+        <details class="review-item" style="--review-photo:url('assets/review-geert.jpg');--review-photo-pos:40% 18%">
           <summary>
             <span class="review-summary-name">Geert Marynissen</span>
             <span class="review-stars" aria-hidden="true"><svg class="icon" width="12" height="12"><use href="#icon-star"></use></svg><svg class="icon" width="12" height="12"><use href="#icon-star"></use></svg><svg class="icon" width="12" height="12"><use href="#icon-star"></use></svg><svg class="icon" width="12" height="12"><use href="#icon-star"></use></svg><svg class="icon" width="12" height="12"><use href="#icon-star"></use></svg></span>
@@ -257,13 +293,14 @@
         <div class="tarief-inner">
           <p class="eyebrow">Investering</p>
           <h2><span class="title-accent">Lanceringstarief</span></h2>
-          <p>De voorbije vijf jaar heb ik doorgebracht op verschillende continenten, tussen verschillende culturen. Ik heb dit werk op verschillende plekken over de wereld mogen ontvangen én mogen aanbieden.</p>
+          <p>Ik heb dit werk op verschillende plekken over de wereld mogen ontvangen én mogen aanbieden.</p>
           <p>Daarom kijk ik er enorm naar uit om Jouw Essentieweg na vijf jaar voor het eerst vanuit mijn veilige thuishaven, hier in de regio, te mogen brengen.</p>
-          <p>Om dit te vieren, bied ik <strong class="price-mark">de eerste 8 sessies</strong> aan voor een lanceringstarief van <strong class="price-mark">€188</strong>.</p>
+          <p>Om dit te vieren, bied ik <strong class="price-mark">de eerste 8 sessies</strong> aan voor een lanceringsprijs van <strong class="price-mark">€188</strong>.</p>
           <p>Daarna werk ik met een glijdende schaal van €222 tot €444, met €333 als richtprijs. Bij een sessie aan huis komt een extra bijdrage voor de verplaatsingskosten.</p>
         </div>
 
         <div class="tarief-card">
+          <svg class="icon tarief-card-icon" width="26" height="26" aria-hidden="true"><use href="#icon-bird"></use></svg>
           <p class="tarief-card-label">Lanceringsprijs</p>
           <p class="tarief-card-price">€188</p>
           <span class="tarief-card-divider" aria-hidden="true"></span>
@@ -287,6 +324,39 @@
 
   </main>
 
-  <footer><span>© <span id="year"></span> Jouw Essentieweg · Tom Æon</span><a href="tel:+32474373277">+32 474 37 32 77</a><a href="#top">Terug naar boven ↑</a></footer>
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="Jouw Essentieweg, terug naar boven">
+          <img src="assets/mark.svg" alt="" width="42" height="42">
+          <span><strong>Jouw <span class="title-accent">Essentieweg</span></strong></span>
+        </a>
+        <p class="footer-tagline">Lichaamswerk dat echt werkt.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer navigatie">
+        <p class="footer-heading">Secties</p>
+        <a href="#ervaren">Ervaringen</a>
+        <a href="#tom">Tom</a>
+        <a href="#verwachten">Verwachten</a>
+        <a href="#lichaamswerk">Lichaamswerk</a>
+        <a href="#reviews">Testimonies</a>
+        <a href="#tarief">Investering</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="footer-contact">
+        <p class="footer-heading">Contact</p>
+        <a href="tel:+32474373277">+32 474 37 32 77</a>
+        <a href="https://wa.me/32474373277?text=Hoi%20Tom%2C%20Jouw%20Essentieweg%20spreekt%20me%20aan%20en%20ik%20ben%20benieuwd%20wat%20deze%20ervaring%20voor%20mij%20kan%20betekenen.%20Kunnen%20we%20even%20kennismaken%3F" target="_blank" rel="noopener">Stuur me een berichtje</a>
+        <span class="footer-location"><svg class="icon" width="15" height="15" aria-hidden="true"><use href="#icon-pin"></use></svg>Bij jou thuis of in Tielen</span>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Jouw Essentieweg · Tom Æon</span>
+      <a class="footer-top-link" href="#top">Terug naar boven ↑</a>
+    </div>
+  </footer>
 </body>
 </html>
