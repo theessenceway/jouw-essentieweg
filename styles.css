@@ -9,7 +9,7 @@
 .skip-link{position:fixed;z-index:999;top:1rem;left:1rem;padding:.7rem 1rem;background:var(--gold-soft);color:var(--night);transform:translateY(-180%)}.skip-link:focus{transform:none}
 
 /* header */
-.site-header{position:fixed;z-index:100;top:0;left:0;right:0;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:84px;padding:0 clamp(1.2rem,4vw,4.5rem);color:var(--cream);border-bottom:1px solid var(--white-line);background:linear-gradient(180deg,rgba(3,14,30,.88),rgba(3,14,30,.34));backdrop-filter:blur(18px);transition:background .3s ease}.site-header.is-scrolled{background:rgba(4,17,36,.94)}
+.site-header{position:fixed;z-index:100;top:0;left:0;right:0;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:84px;padding:0 clamp(1.2rem,4vw,4.5rem);color:var(--cream);border-bottom:1px solid var(--white-line);background:linear-gradient(180deg,rgba(3,14,30,.88),rgba(3,14,30,.34));backdrop-filter:blur(18px)}
 .brand{display:flex;gap:.75rem;align-items:center;text-decoration:none;white-space:nowrap}.brand strong{font-family:var(--serif);font-size:1.55rem;line-height:1}.site-header nav{display:flex}.site-header>.button{justify-self:end;white-space:nowrap}
 .button-text-short{display:none}
 .nav-dropdown{position:relative}
@@ -56,11 +56,11 @@ h3{font-size:clamp(1.5rem,2.2vw,2rem)}
 .section-heading{max-width:800px}.section-heading.centered{margin:0 auto;text-align:center}
 
 /* hero (merged opening + essentie intro) */
-.hero{position:relative;background-color:#061529;background-image:linear-gradient(180deg,rgba(6,21,41,.68),rgba(6,21,41,.68)),url('assets/hero-experience.jpg');background-size:cover;background-position:center 32%;background-attachment:fixed}
-.hero-image{position:relative;height:78vh;background-color:#061529;background-image:url('assets/hero-experience.jpg');background-size:cover;background-position:center 32%;background-attachment:fixed}
-.hero-image::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 0%,transparent 55%,rgba(6,21,41,.56) 88%,rgba(6,21,41,.68) 100%);pointer-events:none}
+.hero{position:relative;background-color:#061529;background-image:url('assets/hero-experience.jpg');background-size:cover;background-position:center 32%}
+.hero-image{position:relative;height:78vh}
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:clamp(140px,18vw,300px);background:linear-gradient(180deg,transparent,rgba(6,21,41,1));pointer-events:none}
 .hero-copy{position:relative;z-index:2;width:min(760px,90vw);margin:0 auto;text-align:center;padding:clamp(2.5rem,5vw,3.5rem) clamp(1.2rem,4vw,2rem) clamp(4rem,8vh,6rem)}
+.hero-copy::before{content:"";position:absolute;z-index:-1;top:-180px;left:50%;width:100vw;bottom:0;transform:translateX(-50%);background:linear-gradient(180deg,transparent 0,rgba(6,21,41,.48) 280px,rgba(6,21,41,.48) 100%);pointer-events:none}
 .hero-pause{margin:clamp(4rem,9vw,6.5rem) auto 0;max-width:560px;text-align:center}
 .hero-pause-ornament{display:flex;align-items:center;justify-content:center;gap:1rem;margin:0 auto clamp(2.2rem,4.5vw,3rem)}
 .hero-pause-ornament-line{width:34px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
@@ -124,7 +124,7 @@ h3{font-size:clamp(1.5rem,2.2vw,2rem)}
 .expect-flow li:last-child{border-bottom:1px solid rgba(16,27,41,.14)}
 .expect-num{display:block;font-family:var(--serif);font-size:1.6rem;color:var(--gold-deep)}
 .expect-flow p{margin:.4rem 0 0;color:#4a4238}
-.expect-choice{position:relative;z-index:2;margin:3.5rem auto 0;max-width:760px;padding-top:clamp(2.2rem,4vw,3rem);padding-bottom:clamp(5rem,10vw,8rem);border-top:1px solid rgba(16,27,41,.14)}
+.expect-choice{position:relative;z-index:2;margin:3.5rem auto 0;max-width:760px;padding-top:clamp(2.2rem,4vw,3rem);padding-bottom:clamp(7.5rem,14vw,11rem);border-top:1px solid rgba(16,27,41,.14)}
 .expect-choice-heading{margin:0 0 2.2rem;text-align:center;font-family:var(--serif);font-weight:500;font-size:clamp(2.6rem,4.6vw,4.6rem);line-height:1.05;letter-spacing:-.03em;color:var(--ink)}
 .expect-choice-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:1.8rem}
 .expect-choice-divider{width:1px;background:rgba(16,27,41,.14)}
