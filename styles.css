@@ -229,6 +229,7 @@ a:focus-visible,button:focus-visible,.button:focus-visible{outline:2px solid var
   .button-text-full{display:none}
   .button-text-short{display:inline}
   .hero{background-size:auto 90vh;background-position:center 8%;background-repeat:no-repeat}
+  .hero::before{content:"";position:absolute;left:0;right:0;top:calc(90vh - clamp(140px,18vw,300px));height:clamp(140px,18vw,300px);background:linear-gradient(180deg,transparent,#061529);pointer-events:none}
   .hero-image{height:64vh}
   .hero-copy{width:100%;text-align:center;padding:2.5rem 1.4rem 4.5rem}
   .hero-copy h1{font-size:clamp(2.5rem,11vw,3.2rem)}
